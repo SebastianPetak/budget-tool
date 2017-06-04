@@ -1,6 +1,6 @@
 # Automation Registration Target
 
-A monthly budget allocation tool based on the conscious spending chapter in _I Will Teach You To Be Rich_
+A monthly budget allocation tool.
 
 ## Installation
 
