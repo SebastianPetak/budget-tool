@@ -1,6 +1,7 @@
 /* SITEWIDE STYLES ========================================================= */
 h1 {
 	text-align: center;
+	font-size: 2.7em;
 }
 /* NAVBAR STYLES =========================================================== */
 body {
@@ -40,4 +41,52 @@ nav li a:hover {
 }
 .error-page p i {
 	font-size: 4em;
+}
+/* SIGN UP PAGE ============================================================ */
+.signup-page {
+	text-align: center;
+	float: left;
+	width: 50%;
+	background-color: #e0e0e0;
+	margin-left: 25%;
+	margin-top: 3em;
+	border-radius: 20px;
+}
+/* media queries for size of signup section on different devices */
+@media screen and (max-width: 1024px) {
+	.signup-page {
+		width: 66%;
+		margin-left: 17%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.signup-page {
+		width: 100%;
+		margin-left: 0;
+		border-radius: 0px;
+	}
+}
+.signup-page input {
+	margin-bottom: 2.5em;
+}
+.signup-page form label {
+	font-size: 1.3em;
+}
+.signup-page form .inputField {
+	font-size: 1.5em;
+	border: 1px gray solid;
+	border-radius: 5px;
+}
+.signup-page input:focus {
+	box-shadow: 0 0 1pt 1pt red;
+}
+.signup-page .inputSubmit {
+	color: white;
+	font-size: 1.7em;
+	padding: 10px;
+	border: 0;
+	width: auto;
+	height: auto;
+	background-color: #428bca;
+	border-radius: 5px;
 }

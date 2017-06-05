@@ -1,0 +1,15 @@
+<%- include ./partials/heading.ejs %>
+<%- include ./partials/navbar.ejs %>
+<div class="signup-page">
+	<h1>Sign Up</h1>
+	<form action="/signup" method="post">
+		<label for="email">Email</label><br>
+		<input class="inputField" type="text" name="email"><br>
+		<label for="password">Password</label><br>
+		<input class="inputField" type="password" name="password"><br>
+		<label for="confirmPassword">Confirm Password</label><br>
+		<input class="inputField" type="password" name="confirmPassword"><br>
+		<input class="inputSubmit" type="submit" value="Submit">
+	</form>
+</div>
+<%- include ./partials/footer.ejs %>
