@@ -4,20 +4,31 @@ var session = require('express-session');
 var mongoose = require('mongoose');
 var Promise = require('bluebird');
 mongoose.Promise = Promise;
+var MongoStore = require('connect-mongo')(session);
 var configDB = require('./config/database.js');
 var app = express();
 
 // mongodb connection
-var db;
-mongoose.connect(configDB.url).then(function(connection) {
-	db = connection;
-}).catch(function(err) {
-	console.log('Database Error:', err)
+mongoose.connect(configDB.url);
+var db = mongoose.connection;
+// mongo error
+db.on('error', console.error.bind(console, 'connection error:'));
+
+// use session for tracking logins
+app.use(session({
+	secret: 'monthly budget is vital',
+	resave: true,
+	saveUninitialized: false,
+	store: new MongoStore({
+		mongooseConnection: db
+	})
+}));
+
+// make user ID available in templates
+app.use(function(req, res, next) {
+	res.locals.currentUser = req.session.userId;
+	next();
 });
-
-// TODO use session for tracking logins
-
-// TODO make user ID available in templates
 
 // parse incoming requests
 app.use(bodyParser.json());
