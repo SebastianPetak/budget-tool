@@ -1,4 +1,8 @@
-/* NAVBAR STYLES ========================================================*/
+/* SITEWIDE STYLES ========================================================= */
+h1 {
+	text-align: center;
+}
+/* NAVBAR STYLES =========================================================== */
 body {
 	margin: 0;
 	padding: 0;
@@ -27,4 +31,13 @@ nav li a {
 /* change link color to #111 on hover */
 nav li a:hover {
 	background-color: #111;
+}
+/* ERROR PAGE ============================================================== */
+.error-page p {
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+}
+.error-page p i {
+	font-size: 4em;
 }
