@@ -14,7 +14,28 @@ var UserSchema = new mongoose.Schema({
 	}
 });
 
-// TODO authenticate input against database documents
+// authenticate input against database documents
+UserSchema.statics.authenticate = function(email, password) {
+	return User.findOne({ email: email })
+		.exec(function(err, user) {
+			if(err) {
+				return err;
+			} else if (!user) {
+				var err = new Error('User not found.');
+				err.status = 401;
+				return err;
+			}
+			bcrypt.compare(password, user.password).then(function(result) {
+				if (result === true) {
+					return user;
+				} else {
+					var err = new Error('Incorrect email or password');
+					err.status = 401;
+					return err;
+				}
+			})
+		})
+}
 
 // hash password before saving to database
 UserSchema.pre('save', function(next) {
