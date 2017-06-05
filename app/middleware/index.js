@@ -1,3 +1,10 @@
+var loggedOut = (req, res, next) => {
+	if (req.session && req.session.userId) {
+		return res.redirect('/budget');
+	}
+	return next();
+}
+
 var requiresLogin = (req, res, next) => {
 	if (req.session && req.session.userId) {
 		return next();
@@ -8,3 +15,4 @@ var requiresLogin = (req, res, next) => {
 }
 
 module.exports.requiresLogin = requiresLogin;
+module.exports.loggedOut = loggedOut;

@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 // GET /signup
-router.get('/signup', function(req, res, next) {
+router.get('/signup', mid.loggedOut, function(req, res, next) {
 	return res.render('signup', { title: 'Sign Up' });
 });
 
@@ -62,7 +62,7 @@ router.post('/signup', function(req, res, next) {
 });
 
 // GET /login
-router.get('/login', function(req, res, next) {
+router.get('/login', mid.loggedOut, function(req, res, next) {
 	return res.render('login', { title: 'Log In' });
 });
 
