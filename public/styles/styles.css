@@ -1,13 +1,17 @@
 /* SITEWIDE STYLES ========================================================= */
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
 h1 {
 	text-align: center;
 	font-size: 2.7em;
 }
 /* NAVBAR STYLES =========================================================== */
-body {
-	margin: 0;
-	padding: 0;
-}
 nav ul {
 	list-style-type: none;
 	margin: 0;
@@ -89,4 +93,32 @@ nav li a:hover {
 	height: auto;
 	background-color: #428bca;
 	border-radius: 5px;
+}
+/* BUDGET PAGE ============================================================= */
+/* budget-page height are not 100% due to navbar taking percent of height */
+.budget-page {
+	width: 100%;
+	height: 93.5%; /* adjust if navbar height changes */
+	overflow-y: auto;
+	margin: 0;
+}
+.budget-page .left-pane {
+	margin: 0;
+	width: 25%;
+	height: 100%;
+	overflow-y: auto;
+	float: left;
+	border-right: 1px black solid;
+}
+.budget-page .right-pane {
+	margin: 0;
+	width: 25%;
+	float: right;
+	border-left: 1px black solid;
+	height: 100%;
+	overflow-y: auto;
+}
+.budget-page .center-pane {
+	margin: 0;
+	float: left;
 }
