@@ -1,0 +1,28 @@
+{
+	"user_id": "5935ac20b0472f1c6e973ad9",
+	"fixedCosts": [
+		{
+			"name": "Rent",
+			"amount": 500.00
+		}
+	],
+	"investments": [
+
+	],
+	"savings": [
+		{
+			"name": "Monthly Savings",
+			"amount": 100.00
+		}
+	],
+	"spendingMoney": [
+		{
+			"name": "Bars",
+			"amount": 150.00
+		},
+		{
+			"name": "coffeeShops",
+			"amount": 75.00
+		}
+	]
+}
