@@ -1,0 +1,124 @@
+/* SITEWIDE STYLES ========================================================= */
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	text-align: center;
+	font-size: 2.7em;
+}
+/* NAVBAR STYLES =========================================================== */
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+nav .navFloatLeft {
+	float: left;
+}
+nav .navFloatRight {
+	float: right;
+}
+nav li a {
+	font-size: 1.5em;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 16px 16px;
+	text-decoration: none;
+}
+/* change link color to #111 on hover */
+nav li a:hover {
+	background-color: #111;
+}
+/* ERROR PAGE ============================================================== */
+.error-page p {
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+}
+.error-page p i {
+	font-size: 4em;
+}
+/* SIGN UP PAGE ============================================================ */
+.signup-login-page {
+	text-align: center;
+	float: left;
+	width: 50%;
+	background-color: #e0e0e0;
+	margin-left: 25%;
+	margin-top: 3em;
+	border-radius: 20px;
+}
+/* media queries for size of signup section on different devices */
+@media screen and (max-width: 1024px) {
+	.signup-login-page {
+		width: 66%;
+		margin-left: 17%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.signup-login-page {
+		width: 100%;
+		margin-left: 0;
+		border-radius: 0px;
+	}
+}
+.signup-login-page input {
+	margin-bottom: 2.5em;
+}
+.signup-login-page form label {
+	font-size: 1.3em;
+}
+.signup-login-page form .inputField {
+	font-size: 1.5em;
+	border: 1px gray solid;
+	border-radius: 5px;
+}
+.signup-login-page input:focus {
+	box-shadow: 0 0 1pt 1pt red;
+}
+.signup-login-page .inputSubmit {
+	color: white;
+	font-size: 1.7em;
+	padding: 10px;
+	border: 0;
+	width: auto;
+	height: auto;
+	background-color: #428bca;
+	border-radius: 5px;
+}
+/* BUDGET PAGE ============================================================= */
+/* budget-page height are not 100% due to navbar taking percent of height */
+.budget-page {
+	width: 100%;
+	height: 93.5%; /* adjust if navbar height changes */
+	overflow-y: auto;
+	margin: 0;
+}
+.budget-page .left-pane {
+	margin: 0;
+	width: 25%;
+	height: 100%;
+	overflow-y: auto;
+	float: left;
+	border-right: 1px black solid;
+}
+.budget-page .right-pane {
+	margin: 0;
+	width: 25%;
+	float: right;
+	border-left: 1px black solid;
+	height: 100%;
+	overflow-y: auto;
+}
+.budget-page .center-pane {
+	margin: 0;
+	float: left;
+}

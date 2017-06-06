@@ -1,0 +1,12 @@
+<nav>
+	<ul>
+		<li class="navFloatLeft"><a href="/">Budget-Tool</a></li>
+		<li class="navFloatRight"><a href="/">About</a></li>
+		<% if (currentUser) { %>
+			<li class="navFloatRight"><a href="logout">Logout</a></li>
+		<% } else { %>
+			<li class="navFloatRight"><a href="login">Login</a></li>
+			<li class="navFloatRight"><a href="signup">Sign Up</a></li>
+		<% } %>
+	</ul>
+</nav>
