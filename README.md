@@ -1,4 +1,4 @@
-# Automation Registration Target
+# Budget Tool
 
 A monthly budget allocation tool.
 
