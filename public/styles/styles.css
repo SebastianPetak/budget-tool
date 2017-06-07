@@ -104,7 +104,8 @@ nav li a:hover {
 }
 .budget-page .left-pane {
 	margin: 0;
-	width: 25%;
+	padding: 0;
+	width: 24.5%;
 	height: 100%;
 	overflow-y: auto;
 	float: left;
@@ -112,7 +113,8 @@ nav li a:hover {
 }
 .budget-page .right-pane {
 	margin: 0;
-	width: 25%;
+	padding: 0;
+	width: 24.5%;
 	float: right;
 	border-left: 1px black solid;
 	height: 100%;
@@ -120,5 +122,26 @@ nav li a:hover {
 }
 .budget-page .center-pane {
 	margin: 0;
+	padding: 0;
 	float: left;
+	width: 50%;
+}
+.budget-page .center-pane table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.budget-page .center-pane table td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+/* Provide width for each column on the table */
+.budget-page .center-pane table .name-th {
+	width: 50%;
+}
+.budget-page .center-pane table .cost-th {
+	width: 25%;
+}
+.budget-page .center-pane table .POB-th {
+	width: 25%;
 }
