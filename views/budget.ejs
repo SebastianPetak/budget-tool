@@ -3,17 +3,73 @@
 <div class="budget-page">
 	<div class="left-pane">
 		<h2>Overview</h2>
-		<h3>Fixed Costs</h3>
-		<h3>Investments</h3>
-		<h3>Savings</h3>
-		<h3>Spending Money</h3>
+		<h3 id="fixed-cost-overview">Fixed Costs</h3>
+		<h3 id="investments-overview">Investments</h3>
+		<h3 id="savings-overview">Savings</h3>
+		<h3 id="spending-overview">Spending Money</h3>
 	</div>
+
+	<!-- CENTER PANE ======================================================== -->
 	<div class="center-pane">
 		<h2>Budget</h2>
+		<!-- Each table is populated via JS -->
+
+		<!-- FIXED COST ITEMS-->
 		<h3>Fixed Costs</h3>
+		<table id="fixed-cost-items">
+			<thead>
+				<tr>
+					<th class="name-th">Name</th>
+					<th class="cost-th">Cost</th>
+					<th class="POB-th">Percent of Budget</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<!-- INVESTMENT ITEMS-->
 		<h3>Investments</h3>
+		<table id="investment-items">
+			<thead>
+				<tr>
+					<th class="name-th">Name</th>
+					<th class="cost-th">Cost</th>
+					<th class="POB-th">Percent of Budget</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+	<!-- SAVINGS ITEMS -->
 		<h3>Savings</h3>
+		<table id="savings-items">
+			<thead>
+				<tr>
+					<th class="name-th">Name</th>
+					<th class="cost-th">Cost</th>
+					<th class="POB-th">Percent of Budget</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<!-- SPEDING MONEY ITEMS -->
 		<h3>Spending Money</h3>
+		<table id="spending-money-items">
+			<thead>
+				<tr>
+					<th class="name-th">Name</th>
+					<th class="cost-th">Cost</th>
+					<th class="POB-th">Percent of Budget</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
 	</div>
 	<div class="right-pane">
 		<h2>Add Item</h2>

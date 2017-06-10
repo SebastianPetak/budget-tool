@@ -1,5 +1,6 @@
 {
 	"user_id": "5935ac20b0472f1c6e973ad9",
+	"monthlyIncome": 3000.00,
 	"fixedCosts": [
 		{
 			"name": "Rent",
@@ -21,7 +22,7 @@
 			"amount": 150.00
 		},
 		{
-			"name": "coffeeShops",
+			"name": "Coffee Shops",
 			"amount": 75.00
 		}
 	]
