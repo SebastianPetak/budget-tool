@@ -36,7 +36,7 @@ $(document).ready(function() {
 			});
 		};
 
-		/* call our method to populate all tables with the appropriate data */
+		/* call our function to populate all tables with the appropriate data */
 		appendBudgetRows(fixedCosts, fixedItemsId);
 		appendBudgetRows(investments, investmentItemsId);
 		appendBudgetRows(savings, savingsItemsId);
@@ -66,6 +66,7 @@ $(document).ready(function() {
 			// and set the width of the progress bar to that percent.
 			$(id).css('width', (categoryCost / response.monthlyIncome * 100).toFixed(1) + '%');
 		};
+		// Call our function to advance the progress bars
 		calculateProgressBar(fixedCosts, '#fixed-costs-overview .bar-progress');
 		calculateProgressBar(investments, '#investment-overview .bar-progress');
 		calculateProgressBar(savings, '#savings-overview .bar-progress');
