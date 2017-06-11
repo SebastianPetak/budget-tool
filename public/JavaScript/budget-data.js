@@ -45,7 +45,6 @@ $(document).ready(function() {
 		/* LEFT PANE =========================================================== */
 		/* display total monthly income */
 		$('#monthlyIncome').html('Monthly Income: $' + response.monthlyIncome);
-
 		/* calculate and display how much of the monthly income is used by each
 			category */
 		var calculateProgressBar = (category, id) => {
@@ -66,10 +65,10 @@ $(document).ready(function() {
 			// Find the percentage of the monthly income that the category uses,
 			// and set the width of the progress bar to that percent.
 			$(id).css('width', (categoryCost / response.monthlyIncome * 100).toFixed(1) + '%');
-		}
-		calculateProgressBar(fixedCosts, '#fixed-bar-container > .bar-progress');
-		calculateProgressBar(investments, '#investment-bar-container > .bar-progress');
-		calculateProgressBar(savings, '#savings-bar-container > .bar-progress');
-		calculateProgressBar(spendingMoney, '#spending-bar-container > .bar-progress');
+		};
+		calculateProgressBar(fixedCosts, '#fixed-costs-overview .bar-progress');
+		calculateProgressBar(investments, '#investment-overview .bar-progress');
+		calculateProgressBar(savings, '#savings-overview .bar-progress');
+		calculateProgressBar(spendingMoney, '#spending-money-overview .bar-progress');
 	});
 });
