@@ -126,6 +126,7 @@ nav li a:hover {
 	float: left;
 	width: 50%;
 }
+/* CENTER PANE CONTENT */
 .budget-page .center-pane table {
 	width: 100%;
 	border-collapse: collapse;
@@ -144,4 +145,21 @@ nav li a:hover {
 }
 .budget-page .center-pane table .POB-th {
 	width: 25%;
+}
+/* LEFT PANE CONTENT */
+/* PROGRESS BARS */
+.left-pane {
+	text-align: center;
+}
+.bar-container {
+	width: 90%;
+	height: 30px;
+	background-color: #ddd;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+.bar-progress {
+	width: 0%;
+	height: 30px;
+	background-color: #555;
 }

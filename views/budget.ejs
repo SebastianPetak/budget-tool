@@ -1,12 +1,30 @@
 <%- include ./partials/heading.ejs %>
 <%- include ./partials/navbar.ejs %>
 <div class="budget-page">
+	<!-- LEFT PANE ========================================================== -->
 	<div class="left-pane">
 		<h2>Overview</h2>
-		<h3 id="fixed-cost-overview">Fixed Costs</h3>
-		<h3 id="investments-overview">Investments</h3>
-		<h3 id="savings-overview">Savings</h3>
-		<h3 id="spending-overview">Spending Money</h3>
+		<p id="monthlyIncome"></p>
+		<h3>Fixed Costs</h3>
+		<div id="fixed-bar-container" class="bar-container">
+			<div class="bar-progress">
+			</div>
+		</div>
+		<h3>Investments</h3>
+		<div id="investment-bar-container" class="bar-container">
+			<div class="bar-progress">
+			</div>
+		</div>
+		<h3>Savings</h3>
+		<div id="savings-bar-container" class="bar-container">
+			<div class="bar-progress">
+			</div>
+		</div>
+		<h3>Spending Money</h3>
+		<div id="spending-bar-container" class="bar-container">
+			<div class="bar-progress">
+			</div>
+		</div>
 	</div>
 
 	<!-- CENTER PANE ======================================================== -->

@@ -8,7 +8,8 @@ $(document).ready(function() {
 		dataType: 'json',
 		url: 'sample-budget.json',
 	}).done(function(response) {
-		/* assign object containing a type of cost to a variable */
+		/* CENTER PANE ========================================================= */
+		/* assign object containing a category of cost to a variable */
 		var fixedCosts = response.fixedCosts;
 		var investments = response.investments;
 		var savings = response.savings;
@@ -19,12 +20,12 @@ $(document).ready(function() {
 		var fixedItemsId = '#fixed-cost-items';
 		var investmentItemsId = '#investment-items';
 		var savingsItemsId = '#savings-items';
-		var spendingMoneyItemsId = '#spending-money-items'
+		var spendingMoneyItemsId = '#spending-money-items';
 
 		/* take in the object containing our budget items and the id to assign
 			rows to and populate the table with our users budget items */
-		var appendBudgetRows = (type, id) => {
-			$.each(type, function(i, item) {
+		var appendBudgetRows = (category, id) => {
+			$.each(category, function(i, item) {
 				$(id + '> tbody').append(
 					'<tr>',
 					$('<td>').text(item.name),
@@ -40,5 +41,35 @@ $(document).ready(function() {
 		appendBudgetRows(investments, investmentItemsId);
 		appendBudgetRows(savings, savingsItemsId);
 		appendBudgetRows(spendingMoney, spendingMoneyItemsId);
+
+		/* LEFT PANE =========================================================== */
+		/* display total monthly income */
+		$('#monthlyIncome').html('Monthly Income: $' + response.monthlyIncome);
+
+		/* calculate and display how much of the monthly income is used by each
+			category */
+		var calculateProgressBar = (category, id) => {
+			var categoryCost;
+			// If category has no costs, bar progress width to 0
+			if (category.length === 0) {
+				categoryCost = 0;
+			}
+			//  If category only has one cost, use it's amount
+			else if (category.length === 1) {
+				categoryCost = category[0].amount;
+				// If category has more than one cost, add the costs together.
+			} else {
+				categoryCost = category.reduce((a, b) => {
+					return a.amount + b.amount;
+				});
+			}
+			// Find the percentage of the monthly income that the category uses,
+			// and set the width of the progress bar to that percent.
+			$(id).css('width', (categoryCost / response.monthlyIncome * 100).toFixed(1) + '%');
+		}
+		calculateProgressBar(fixedCosts, '#fixed-bar-container > .bar-progress');
+		calculateProgressBar(investments, '#investment-bar-container > .bar-progress');
+		calculateProgressBar(savings, '#savings-bar-container > .bar-progress');
+		calculateProgressBar(spendingMoney, '#spending-bar-container > .bar-progress');
 	});
 });
