@@ -33,9 +33,9 @@ UserSchema.statics.authenticate = function(email, password) {
 					err.status = 401;
 					return err;
 				}
-			})
-		})
-}
+			});
+		});
+};
 
 // hash password before saving to database
 UserSchema.pre('save', function(next) {

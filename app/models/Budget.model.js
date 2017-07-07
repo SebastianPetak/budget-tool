@@ -4,17 +4,11 @@ var BudgetSchema = new mongoose.Schema({
 	'user_id': {
 		type: String,
 		require: true,
-		unique: true
+		postedBy: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 	},
 	'monthlyIncome': {
 		type: Number,
 		require: true,
-	},
-	'fixedCosts': {
-		type: Array
-	},
-	'spendingMoney': {
-		type: Array
 	}
 });
 
