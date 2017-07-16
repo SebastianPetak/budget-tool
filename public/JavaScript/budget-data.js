@@ -5,7 +5,7 @@ $(document).ready(function() {
 		the user_id to find the correct document
 	*/
 	// TODO Create object to contain state of the budget
-	
+
 	// var budgetData = {
 	// 	fixedCosts = [],
 	// 	investments = [],
@@ -20,13 +20,13 @@ $(document).ready(function() {
 	// }
 
 	// MonthlyIncome =========================================================
-	$.ajax({
-		dataType: 'json',
-		url: '/monthlyIncome'
-		type: 'post'
-	}).done(function(response) {
-
-	})
+	// $.ajax({
+	// 	dataType: 'json',
+	// 	url: '/monthlyIncome'
+	// 	type: 'post'
+	// }).done(function(response) {
+	//
+	// })
 
 	// COSTS =================================================================
 	$.ajax({
