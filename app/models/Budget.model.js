@@ -9,6 +9,7 @@ var BudgetSchema = new mongoose.Schema({
 	'monthlyIncome': {
 		type: Number,
 		require: true,
+		default: 0
 	}
 });
 
