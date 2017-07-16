@@ -4,6 +4,31 @@ $(document).ready(function() {
 		Needs to be replaced with actual api route which will use
 		the user_id to find the correct document
 	*/
+	// TODO Create object to contain state of the budget
+	
+	// var budgetData = {
+	// 	fixedCosts = [],
+	// 	investments = [],
+	// 	savings = [],
+	// 	spendingMoney = [],
+	// 	monthlyIncome = 0
+	// }
+
+	// TODO create function to update monthlyIncome
+	// var updateMonthlyIncome = () => {
+	// 	// Post to a api route to change the monthly income
+	// }
+
+	// MonthlyIncome =========================================================
+	$.ajax({
+		dataType: 'json',
+		url: '/monthlyIncome'
+		type: 'post'
+	}).done(function(response) {
+
+	})
+
+	// COSTS =================================================================
 	$.ajax({
 		dataType: 'json',
 		url: 'sample-budget.json',
