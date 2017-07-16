@@ -6,13 +6,13 @@ $(document).ready(function() {
 	*/
 	// TODO Create object to contain state of the budget
 
-	// var budgetData = {
-	// 	fixedCosts = [],
-	// 	investments = [],
-	// 	savings = [],
-	// 	spendingMoney = [],
-	// 	monthlyIncome = 0
-	// }
+	var budgetData = {
+		'fixedCosts': [],
+		'investments': [],
+		'savings': [],
+		'spendingMoney': [],
+		'monthlyIncome': 0
+	}
 
 	// TODO create function to update monthlyIncome
 	// var updateMonthlyIncome = () => {
@@ -20,13 +20,14 @@ $(document).ready(function() {
 	// }
 
 	// MonthlyIncome =========================================================
-	// $.ajax({
-	// 	dataType: 'json',
-	// 	url: '/monthlyIncome'
-	// 	type: 'post'
-	// }).done(function(response) {
-	//
-	// })
+	$.ajax({
+		dataType: 'json',
+		url: '/monthlyIncome',
+		type: 'GET'
+	}).done(function(response) {
+		console.log('monthlyIncome response: ' + response);
+		$('#monthlyIncome').html('Monthly Income: $' + response.monthlyIncome);
+	});
 
 	// COSTS =================================================================
 	$.ajax({
@@ -69,7 +70,7 @@ $(document).ready(function() {
 
 		/* LEFT PANE =========================================================== */
 		/* display total monthly income */
-		$('#monthlyIncome').html('Monthly Income: $' + response.monthlyIncome);
+		// $('#monthlyIncome').html('Monthly Income: $' + response.monthlyIncome);
 		/* calculate and display how much of the monthly income is used by each
 			category */
 		var calculateProgressBar = (category, id) => {
