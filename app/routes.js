@@ -50,7 +50,12 @@ router.post('/signup', function(req, res, next) {
 			// create user session
 			req.session.userId = user._id;
 			// redirect to /profile
-			return res.redirect('/budget');
+			//return res.redirect('/budget');
+		}).then(function() {
+			//Budget.create(data, function (err, small) {
+			Budget.create({'user_id': req.session.userId}).then(function() {
+				return res.redirect('/budget');
+			});
 		}).catch(function(err) {
 			return next(err);
 		});
@@ -108,7 +113,9 @@ router.get('/monthlyIncome', mid.requiresLogin, function(req, res, next) {
 				error: 'Budget Not Found'
 			});
 		} else {
-			res.send('test');
+			res.status(200).json({
+				'monthlyIncome': budget.monthlyIncome
+			});
 		}
 	});
 });
