@@ -50,7 +50,10 @@ $(document).ready(function() {
 					'<tr>',
 					$('<td>').text(item.name),
 					$('<td>').text('$' + item.amount.toFixed(2)),
-					$('<td>').text((item.amount / budgetData.monthlyIncome * 100).toFixed(1) + '%'),
+					// If the budget is set to 0 (which is default) just put '-' for
+					// the budget, otherwise, determine the percentage.
+					$('<td>').text(budgetData.monthlyIncome == 0 ? '-' :
+					(item.amount / budgetData.monthlyIncome * 100).toFixed(1) + '%'),
 					'</tr>'
 				);
 			});
