@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('./models/User.model.js');
+var Budget = require('./models/Budget.model.js');
 var mid = require('./middleware');
 
 // GET /home
@@ -49,7 +50,12 @@ router.post('/signup', function(req, res, next) {
 			// create user session
 			req.session.userId = user._id;
 			// redirect to /profile
-			return res.redirect('/budget');
+			//return res.redirect('/budget');
+		}).then(function() {
+			//Budget.create(data, function (err, small) {
+			Budget.create({'user_id': req.session.userId}).then(function() {
+				return res.redirect('/budget');
+			});
 		}).catch(function(err) {
 			return next(err);
 		});
@@ -92,6 +98,26 @@ router.get('/logout', function(req, res, next) {
 			}
 		});
 	}
+});
+
+// API related routes
+router.get('/monthlyIncome', mid.requiresLogin, function(req, res, next) {
+	Budget.findOne({ 'user_id': req.session.userId})
+	.exec(function(err, budget) {
+		if (err) {
+			res.status(500).json({
+				error: 'Internal Server Error'
+			});
+		} else if (!budget) {
+			res.status(404).json({
+				error: 'Budget Not Found'
+			});
+		} else {
+			res.status(200).json({
+				'monthlyIncome': budget.monthlyIncome
+			});
+		}
+	});
 });
 
 module.exports = router;

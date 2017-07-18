@@ -1,74 +1,59 @@
 <%- include ./partials/heading.ejs %>
 <%- include ./partials/navbar.ejs %>
 <div class="budget-page">
+	<!-- LEFT PANE ========================================================== -->
 	<div class="left-pane">
 		<h2>Overview</h2>
-		<h3 id="fixed-cost-overview">Fixed Costs</h3>
-		<h3 id="investments-overview">Investments</h3>
-		<h3 id="savings-overview">Savings</h3>
-		<h3 id="spending-overview">Spending Money</h3>
+		<p id="monthlyIncome"></p>
+		<div id="fixed-costs-overview">
+			<h3>Fixed Costs</h3>
+			<div class="bar-container">
+				<div class="bar-progress">
+				</div>
+			</div>
+		</div>
+		<div id="investment-overview">
+			<h3>Investments</h3>
+			<div class="bar-container">
+				<div class="bar-progress">
+				</div>
+			</div>
+		</div>
+		<div id="savings-overview">
+			<h3>Savings</h3>
+			<div class="bar-container">
+				<div class="bar-progress">
+				</div>
+			</div>
+		</div>
+		<div id="spending-money-overview">
+			<h3>Spending Money</h3>
+			<div class="bar-container">
+				<div class="bar-progress">
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- CENTER PANE ======================================================== -->
+	<!-- Each table is populated via JS -->
 	<div class="center-pane">
 		<h2>Budget</h2>
-		<!-- Each table is populated via JS -->
 
 		<!-- FIXED COST ITEMS-->
 		<h3>Fixed Costs</h3>
-		<table id="fixed-cost-items">
-			<thead>
-				<tr>
-					<th class="name-th">Name</th>
-					<th class="cost-th">Cost</th>
-					<th class="POB-th">Percent of Budget</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
+		<table id="fixed-cost-items"></table>
 
 		<!-- INVESTMENT ITEMS-->
-		<h3>Investments</h3>
-		<table id="investment-items">
-			<thead>
-				<tr>
-					<th class="name-th">Name</th>
-					<th class="cost-th">Cost</th>
-					<th class="POB-th">Percent of Budget</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
+		<h3>Investments</h3></table>
 
 	<!-- SAVINGS ITEMS -->
 		<h3>Savings</h3>
-		<table id="savings-items">
-			<thead>
-				<tr>
-					<th class="name-th">Name</th>
-					<th class="cost-th">Cost</th>
-					<th class="POB-th">Percent of Budget</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
+		<table id="savings-items"></table>
 
 		<!-- SPEDING MONEY ITEMS -->
 		<h3>Spending Money</h3>
-		<table id="spending-money-items">
-			<thead>
-				<tr>
-					<th class="name-th">Name</th>
-					<th class="cost-th">Cost</th>
-					<th class="POB-th">Percent of Budget</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
+		<table id="spending-money-items"></table>
 
 	</div>
 	<div class="right-pane">

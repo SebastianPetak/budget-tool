@@ -126,8 +126,20 @@ nav li a:hover {
 	float: left;
 	width: 50%;
 }
+/* CENTER PANE CONTENT */
+.center-pane {
+	text-align: center;
+}
+.center-pane h3 {
+	text-align: left;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
 .budget-page .center-pane table {
-	width: 100%;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
 	border-collapse: collapse;
 }
 .budget-page .center-pane table td, th {
@@ -144,4 +156,21 @@ nav li a:hover {
 }
 .budget-page .center-pane table .POB-th {
 	width: 25%;
+}
+/* LEFT PANE CONTENT */
+/* PROGRESS BARS */
+.left-pane {
+	text-align: center;
+}
+.bar-container {
+	width: 90%;
+	height: 30px;
+	background-color: #ddd;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+.bar-progress {
+	width: 0%;
+	height: 30px;
+	background-color: #555;
 }
