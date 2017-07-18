@@ -12,18 +12,19 @@ $(document).ready(function() {
 		'savings': [],
 		'spendingMoney': [],
 		'monthlyIncome': 0
-	}
+	};
 
 	// TODO create function to update monthlyIncome
 	var updateDomBudget = () => {
-		// Clear the DOM first
+		// Clear the DOM of budget related data
 		$('#monthlyIncome').empty();
-		$('#fixed-cost-items > tbody > tr').remove();
-		$('#investment-items > tbody > tr').remove();
-		$('#savings-items > tbody > tr').remove();
-		$('#spending-money-items > tbody > tr').remove();
-		$('#monthlyIncome > tbody > tr').remove();
+		$('#fixed-cost-items').empty();
+		$('#investment-items').empty();
+		$('#savings-items').empty();
+		$('#spending-money-items').empty();
+		$('#monthlyIncome').empty();
 
+		// Populate the monthly income
 		$('#monthlyIncome').html('Monthly Income: $' + budgetData.monthlyIncome);
 
 		/* CENTER PANE ========================================================= */
@@ -31,6 +32,19 @@ $(document).ready(function() {
 		/* take in the object containing our budget items and the id to assign
 			rows to and populate the table with our users budget items */
 		var appendBudgetRows = (category, id) => {
+			// First create the table and it's headers
+			$(id).append(
+				'<thead>',
+					'<tr>',
+						'<th class="name-th">Name</th>',
+						'<th class="cost-th">Cost</th>',
+						'<th class="POB-th">Percent of Budget</th>',
+					'</tr>',
+				'</thead>',
+				'<tbody>',
+				'</tbody>'
+			);
+			// Then append each item to it's appropriate table (category)
 			$.each(category, function(i, item) {
 				$(id + '> tbody').append(
 					'<tr>',
@@ -75,7 +89,7 @@ $(document).ready(function() {
 		calculateProgressBar(budgetData.investments, '#investment-overview .bar-progress');
 		calculateProgressBar(budgetData.savings, '#savings-overview .bar-progress');
 		calculateProgressBar(budgetData.spendingMoney, '#spending-money-overview .bar-progress');
-	}
+	};
 
 	// MonthlyIncome =========================================================
 	$.ajax({
@@ -88,7 +102,7 @@ $(document).ready(function() {
 		updateDomBudget();
 	}).catch(function(err) {
 		console.log(err);
-	})
+	});
 
 	// COSTS =================================================================
 	$.ajax({
@@ -103,7 +117,7 @@ $(document).ready(function() {
 		updateDomBudget();
 	}).catch(function(err) {
 		console.log(err);
-	})
+	});
 
 
 	// // Old budget ajax call
