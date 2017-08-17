@@ -5,15 +5,26 @@
 		{
 			"name": "Rent",
 			"amount": 500.00
+		},
+		{
+			"name": "Health Insurance",
+			"amount": 150.00
+		},
+		{
+			"name": "Rental & Car Insurance",
+			"amount": 68.62
 		}
 	],
 	"investments": [
-
+		{
+			"name": "Investments",
+			"amount": 1000.00
+		}
 	],
 	"savings": [
 		{
 			"name": "Monthly Savings",
-			"amount": 100.00
+			"amount": 1000.00
 		}
 	],
 	"spendingMoney": [

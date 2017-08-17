@@ -80,7 +80,11 @@ $(document).ready(function() {
 				// If category has more than one cost, add the costs together.
 			} else {
 				categoryCost = category.reduce((a, b) => {
-					return a.amount + b.amount;
+					if (typeof a == 'object') {
+						return a.amount + b.amount;
+					} else {
+						return a + b.amount;
+					}
 				});
 			}
 			// Find the percentage of the monthly income that the category uses,
@@ -94,20 +98,7 @@ $(document).ready(function() {
 		calculateProgressBar(budgetData.spendingMoney, '#spending-money-overview .bar-progress');
 	};
 
-	// MonthlyIncome =========================================================
-	$.ajax({
-		dataType: 'json',
-		url: '/monthlyIncome',
-		type: 'GET'
-	}).done(function(response) {
-		budgetData.monthlyIncome = response.monthlyIncome;
-	}).then(function() {
-		updateDomBudget();
-	}).catch(function(err) {
-		console.log(err);
-	});
-
-	// COSTS =================================================================
+	// Get Budget from database===============================================
 	$.ajax({
 		dataType: 'json',
 		url: 'sample-budget.json',
@@ -116,6 +107,7 @@ $(document).ready(function() {
 		budgetData.investments = response.investments;
 		budgetData.savings = response.savings;
 		budgetData.spendingMoney = response.spendingMoney;
+		budgetData.monthlyIncome = response.monthlyIncome;
 	}).then(function() {
 		updateDomBudget();
 	}).catch(function(err) {
